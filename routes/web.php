@@ -17,18 +17,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cth', function () {
-    return view('contoh');
-});
+// Route::get('/cth', function () {
+//     return view('contoh');
+// });
 
-Route::fallback(function () {
-    return view('notfound');
-});
+// Route::fallback(function () {
+//     return view('notfound');
+// });
 
-Route::get('/hello/hello2/hellolagi', function () {
-    echo "helo word";
-});
+// Route::get('/hello/hello2/hellolagi', function () {
+//     echo "helo word";
+// });
 
-Route::get('/mahasiswa/{nama}', function ($nama) {
-    echo "ini halaman mahasiswa dengan nama $nama";
+// Route::get('/mahasiswa/{nama}', function ($nama) {
+//     echo "ini halaman mahasiswa dengan nama $nama";
+// });
+
+Route::get('/mahasiswa', function () {
+    $kelas = "IS62";
+    $data = ["sailijar","lijar","adha"];
+
+    return view('mahasiswa.index',compact('kelas','data'));
 });
