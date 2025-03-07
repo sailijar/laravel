@@ -33,9 +33,16 @@ Route::get('/', function () {
 //     echo "ini halaman mahasiswa dengan nama $nama";
 // });
 
-Route::get('/mahasiswa', function () {
-    $kelas = "IS62";
-    $data = ["sailijar","lijar","adha"];
+// Route::get('/mahasiswa', function () {
+//     $kelas = "IS62";
+//     $data = ["sailijar","lijar","adha"];
 
-    return view('mahasiswa.index',compact('kelas','data'));
+//     return view('mahasiswa.index',compact('kelas','data'));
+// });
+
+Route::get('mahasiswa',function () {
+    $nama = "herdio saputra";
+    $nilai = 50;
+
+    return view('mahasiswa',compact('nama','nilai'));
 });
