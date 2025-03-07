@@ -41,8 +41,10 @@ Route::get('/', function () {
 // });
 
 Route::get('mahasiswa',function () {
-    $nama = "herdio saputra";
-    $nilai = 50;
+    $nama = "Sailijar";
+    $nilai = 68;
 
-    return view('mahasiswa',compact('nama','nilai'));
+    $nilai2 = [85,70,50,70,35,100];
+
+    return view('mahasiswa',compact('nama','nilai','nilai2'));
 });
