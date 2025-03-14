@@ -35,10 +35,22 @@
         </div>
       </nav>
 
-      <div>
-            {{-- {{ konten }} --}}
-
-      </div>
+        <div class="container text-center m-3 bg-white">
+            <h2 class="mb-3">Data Mahasiswa</h2>
+            <div class="row">
+                <div class="m-auto col-6">
+                    <ul class="list-group">
+                        @forelse ($data_mhs as $mahasiswa )
+                            <li class="list-group-item">{{ $mahasiswa }}</li>
+                        @empty
+                        <div class="alert alert-secondary" role="alert">
+                            Maaf, Data mahasiswa tidak tersedia
+                            </div>
+                        @endforelse
+                    </ul>
+                </div>
+            </div>
+         </div>
 
 
 
