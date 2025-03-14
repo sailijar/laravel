@@ -54,6 +54,17 @@
     </div>
         <hr>
 
+        @forelse ( $nilai2 as $val2 )
+        <div class="alert alert-success d-inline-block">
+            {{ $val2 }}
+
+        </div>
+        @empty
+            <div class="alert alert-secendery d-inline-block"> Data nilai tidak ada </div>
+        @endforelse
+
+
+
         <div class="text-center">
             @for($i=1;$i<=50;$i++)
                 <div class="alert alert-info d-inline-block"> {{ $i }}</div>
