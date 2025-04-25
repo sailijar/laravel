@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama',100);
             $table->string('tempat_lahir',100);
             $table->date('tanggal_lahir');
-            $table->bigIncrements('dosens_id');
+            $table->bigInteger('dosens_id');
             $table->enum('jk',['laki-laki','perempuan']);
             $table->string('foto')->nullable();
             $table->timestamps();
