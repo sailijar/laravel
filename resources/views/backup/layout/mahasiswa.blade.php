@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@
         </div>
 
         {{-- konten --}}
-    </div>
+    {{-- </div>
 
     <footer class="fixed-bottom bg-dark text-white py-2 mt-4 text-center">
         Copyright &copy; Maulian Saputra - 2025
@@ -62,4 +62,4 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 </body>
-</html>
+</html> --}} --}}
