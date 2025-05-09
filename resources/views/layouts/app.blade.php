@@ -30,6 +30,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-link">
+                            <a class="nav-link" href="">Data Mahasiswa</a>
+                        </li>
+                        <li class="nav-link">
+                            <a class="nav-link" href="/dosen">Data Dosen</a>
+                        </li>
 
                     </ul>
 
