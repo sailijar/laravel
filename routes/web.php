@@ -75,13 +75,14 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dosen', [dosenController::class, 'index']);
+Route::get('/dosen/tambah', [dosenController::class, 'create']);
+Route::post('/dosen', [dosenController::class, 'store']);
 
 
 
-
-Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
-Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosen.create');
-Route::post('/dosen', [DosenController::class, 'store'])->name('dosen.store');
-Route::get('/dosen/{id}/edit', [DosenController::class, 'edit'])->name('dosen.edit');
-Route::put('/dosen/{id}', [DosenController::class, 'update'])->name('dosen.update');
-Route::delete('/dosen/{id}', [DosenController::class, 'destroy'])->name('dosen.destroy');
+// Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
+// Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosen.create');
+// Route::post('/dosen', [DosenController::class, 'store'])->name('dosen.store');
+// Route::get('/dosen/{id}/edit', [DosenController::class, 'edit'])->name('dosen.edit');
+// Route::put('/dosen/{id}', [DosenController::class, 'update'])->name('dosen.update');
+// Route::delete('/dosen/{id}', [DosenController::class, 'destroy'])->name('dosen.destroy');
