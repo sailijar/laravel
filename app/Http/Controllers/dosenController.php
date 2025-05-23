@@ -12,8 +12,11 @@ class dosenController extends Controller
      */
     public function index()
     {
-        // TAMPIL
-        return view('dosen.index');
+        // menampilkan data dosen
+        $nomor = 1;
+        $dosen = Dosen::all();
+        return view('Dosen.index',compact('dosen','nomor'));
+
     }
 
     /**
@@ -21,7 +24,7 @@ class dosenController extends Controller
      */
     public function create()
     {
-        //TAMBAH
+        // menampilkan form tambah
         return view('Dosen.form');
     }
 
@@ -30,14 +33,14 @@ class dosenController extends Controller
      */
     public function store(Request $request)
     {
-        //PROSESS TAMBAH
-         $dosen = new Dosen;
-         $dosen->nidn = $request->nidn;
-         $dosen->nama = $request->nama;
-         $dosen->email = $request->email;
-         $dosen->rumpun = $request->rumpun;
-         $dosen->nohp = $request->nohp;
-         $dosen->save();
+        // proses tambah
+        $dosen = new Dosen;
+        $dosen->nidn = $request->nidn;
+        $dosen->nama = $request->nama;
+        $dosen->email = $request->email;
+        $dosen->rumpun = $request->rumpun;
+        $dosen->nohp = $request->nohp;
+        $dosen->save();
 
         return redirect('/dosen');
     }
@@ -47,7 +50,7 @@ class dosenController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // menampilkan data detail
     }
 
     /**
@@ -55,7 +58,9 @@ class dosenController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // form edit
+        $dosen = Dosen::find($id);
+        return view('Dosen.edit',compact('dosen'));
     }
 
     /**
@@ -63,83 +68,24 @@ class dosenController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // proses edit
+        $dosen = Dosen::find($id);
+        $dosen->nidn = $request->nidn;
+        $dosen->nama = $request->nama;
+        $dosen->email = $request->email;
+        $dosen->rumpun = $request->rumpun;
+        $dosen->nohp = $request->nohp;
+        $dosen->save();
+
+        return redirect('/dosen');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //hapus data
+        // proses hapus
     }
 }
-
-
-
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Dosen;
-
-// class DosenController extends Controller
-// {
-//     public function index()
-//     {
-//         $dosen = dosen::all();
-//         return view('dosen.index', compact('dosen'));
-//     }
-
-//     public function create()
-//     {
-//         return view('dosen.create');
-//     }
-
-//     public function store(Request $request)
-//     {
-//         $request->validate([
-//             'nidn' => 'required|unique:dosens',
-//             'nama' => 'required',
-//             'email' => 'required|email|unique:dosens'
-//         ]);
-
-//         dosen::create($request->all());
-
-//         return redirect()->route('dosen.index')->with('success', 'Data dosen berhasil ditambahkan.');
-//     }
-
-
-//     // Tampilkan form edit data dosen
-//     public function edit($id)
-//     {
-//         $dosen = Dosen::findOrFail($id);
-//         return view('dosen.edit', compact('dosen'));
-//     }
-
-//     // Update data dosen
-//     public function update(Request $request, $id)
-//     {
-//         $dosen = Dosen::findOrFail($id);
-
-//         $request->validate([
-//             'nidn' => 'required|unique:dosens,nidn,' . $dosen->id,
-//             'nama' => 'required',
-//             'email' => 'required|email',
-//         ]);
-
-//         $dosen->update($request->all());
-
-//         return redirect()->route('dosen.index')->with('success', 'Data dosen berhasil diupdate');
-//     }
-
-//     // Hapus data dosen
-//     public function destroy($id)
-//     {
-//         $dosen = Dosen::findOrFail($id);
-//         $dosen->delete();
-
-//         return redirect()->route('dosen.index')->with('success', 'Data dosen berhasil dihapus');
-//     }
-// }
-
-
